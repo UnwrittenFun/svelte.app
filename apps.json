@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Hacker News",
+        "github": "sveltejs/sapper-hacker-news",
+        "link": "https://hn.svelte.app",
+        "description":
+            "Hacker News PWA written using sapper. Sapper uses webpack and has server side rendering, service workers, routing and more, right out of the box.",
+        "screenshot": "apps/hn.png"
+    },
+    {
+        "name": "Real World",
+        "github": "sveltejs/realworld",
+        "link": "https://realworld.svelte.app",
+        "description":
+            "Svelte codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.",
+        "screenshot": "apps/realworld.png"
+    }
+]

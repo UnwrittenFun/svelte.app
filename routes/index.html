@@ -1,0 +1,119 @@
+<svelte:head>
+	<title>svelte.app</title>
+</svelte:head>
+
+<header>
+	<h1>svelte<small>.app</small></h1>
+	<h2>
+		A directory of real world example<br>
+		sites written using svelte
+	</h2>
+	<a href="https://svelte.technology" target="_blank">What is svelte?</a>
+</header>
+
+{#each apps as app}
+	<article class="app">
+		<Screenshot image={app.screenshot} alt={app.name} />
+		<div class="content">
+			<h1><a href={app.link}>{app.name}</a></h1>
+			<h2><a href="https://github.com/{app.github}" target="_blank">{app.github}</a></h2>
+			<p>{app.description}</p>
+			<GithubButton repo={app.github} />
+		</div>
+	</article>
+{/each}
+
+<style>
+	h1,
+	h2 {
+	    font-family: Rajdhani, Arial, Helvetica, sans-serif;
+	}
+
+	header h1 {
+	    font-size: 150px;
+	    font-weight: 300;
+	}
+
+	header h1 small {
+	    font-size: 50px;
+	}
+
+	header h2 {
+	    font-size: 40px;
+	    font-weight: 300;
+	}
+
+	header a {
+	    display: block;
+	    color: white;
+	    text-align: center;
+	    margin-top: 32px;
+	    font-size: 12px;
+	    font-weight: 300;
+	}
+
+	header {
+	    margin-bottom: 100px;
+	    text-align: center;
+	}
+
+	.app {
+	    display: flex;
+	    margin-bottom: 64px;
+	}
+
+	.app:nth-child(2n + 1) {
+	    flex-direction: row-reverse;
+	}
+
+	.app:nth-child(2n) .content {
+	    margin-left: 32px;
+	}
+
+	.app:nth-child(2n + 1) .content {
+	    margin-right: 32px;
+	}
+
+	.app .content {
+	    padding-top: 16px;
+	}
+
+	.app .content a {
+	    text-decoration: none;
+	    color: white;
+	}
+
+	.app .content a:hover {
+	    text-decoration: underline;
+	}
+
+	.app .content h1 {
+	    font-size: 28px;
+	    font-weight: 400;
+	}
+
+	.app .content h2 {
+	    font-weight: 400;
+	    font-size: 20px;
+	}
+
+	.app .content p {
+	    font-weight: 300;
+	    font-size: 15px;
+	}
+</style>
+
+<script>
+	export default {
+	    components: {
+	        Screenshot: '../components/Screenshot',
+	        GithubButton: '../components/GithubButton',
+	    },
+
+	    preload() {
+	        return this.fetch('/api/apps')
+	            .then(res => res.json())
+	            .then(apps => ({ apps }));
+	    },
+	};
+</script>
