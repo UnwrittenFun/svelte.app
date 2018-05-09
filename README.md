@@ -1,6 +1,6 @@
 # svelte.app
 
-A directory of real world examplesites written using svelte
+A directory of real world example sites written using svelte.
 
 This is the code that powers [svelte.app](https://svelte.app).
 
