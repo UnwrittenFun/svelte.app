@@ -59,19 +59,9 @@
 
 	.app {
 	    display: flex;
+	    margin: 0 auto;
 	    margin-bottom: 64px;
-	}
-
-	.app:nth-child(2n + 1) {
-	    flex-direction: row-reverse;
-	}
-
-	.app:nth-child(2n) .content {
-	    margin-left: 32px;
-	}
-
-	.app:nth-child(2n + 1) .content {
-	    margin-right: 32px;
+	    max-width: 550px;
 	}
 
 	.app .content {
@@ -100,6 +90,45 @@
 	.app .content p {
 	    font-weight: 300;
 	    font-size: 15px;
+	}
+
+	@media (max-width: 586px) {
+	    .app {
+	        margin-left: 32px;
+	        margin-right: 32px;
+	    }
+
+	    header {
+	        margin-bottom: 64px;
+	    }
+
+	    header h1 {
+	        font-size: 80px;
+	    }
+
+	    header h2 {
+	        font-size: 22px;
+	    }
+	}
+
+	@media (max-width: 430px) {
+	    .app {
+	        flex-direction: column;
+	    }
+	}
+
+	@media (min-width: 431px) {
+	    .app:nth-child(2n + 1) {
+	        flex-direction: row-reverse;
+	    }
+
+	    .app:nth-child(2n) .content {
+	        margin-left: 32px;
+	    }
+
+	    .app:nth-child(2n + 1) .content {
+	        margin-right: 32px;
+	    }
 	}
 </style>
 

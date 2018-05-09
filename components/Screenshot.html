@@ -14,10 +14,28 @@
         z-index: 1;
     }
 
-    .screenshot {
-        position: absolute;
-        width: 172px;
-        left: 4px;
-        top: 19px;
+    @media (max-width: 430px) {
+        .frame {
+            display: none;
+        }
+
+        .wrapper {
+            height: 200px;
+            overflow: hidden;
+            border: 1px solid white;
+        }
+
+        .screenshot {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 431px) {
+        .screenshot {
+            position: absolute;
+            width: 172px;
+            left: 4px;
+            top: 19px;
+        }
     }
 </style>
